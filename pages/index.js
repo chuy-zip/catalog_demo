@@ -13,14 +13,14 @@ export default function Home() {
       <div className="home-container">
         <div className="hero-section">
           <Image
-            src="/next.svg"
-            alt="Next.js Logo"
-            width={180}
-            height={38}
+            src="/logo-megalabs-green.png"
+            alt="Logo"
+            width={360}
+            height={76}
             priority
           />
-          <h1>Bienvenido al Catálogo</h1>
-          <p>Descubre nuestros productos por marcas</p>
+          <h1 className='gray-subs'>Línea dermatológica</h1>
+
           <Link href="/productsBrands" passHref>
             <button className="cta-button">Comenzar</button>
           </Link>

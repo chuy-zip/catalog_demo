@@ -5,6 +5,7 @@ import Link from 'next/link';
 import useProducts from '../hooks/useProducts';
 import Product from '../components/Product';
 import styles from './productsView.module.css';
+import Image from 'next/image';
 
 const ProductsView = () => {
   const router = useRouter();
@@ -59,9 +60,15 @@ const ProductsView = () => {
       <div className="page-container">
         <header className="page-header">
           <Link href="/productsBrands" passHref>
-            <button className="back-button">← Volver a marcas</button>
+            <button className="back-button">←</button>
           </Link>
-          <h1>Productos de {brand}</h1>
+          <Image
+            src="/logo-megalabs-green.png"
+            alt="Logo"
+            width={180}
+            height={38}
+            priority
+          />
           <div className={styles.productCounter}>
             {currentProductIndex + 1} / {brandProducts.length}
           </div>

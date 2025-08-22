@@ -4,6 +4,7 @@ import Link from 'next/link';
 import useProducts from '../hooks/useProducts';
 import BrandButton from '../components/BrandButton';
 import styles from './productsBrands.module.css'
+import Image from 'next/image';
 
 const ProductsBrands = () => {
     const { getBrands, loading, error } = useProducts([]);
@@ -39,16 +40,22 @@ const ProductsBrands = () => {
     return (
         <>
             <Head>
-                <title>Marcas - Catálogo de productos</title>
+                <title>Marcas</title>
                 <meta name="description" content="Selecciona una marca para ver sus productos" />
             </Head>
 
             <div className='page-container'>
                 <header className="page-header">
                     <Link href="/" passHref>
-                        <button className="back-button">← Volver</button>
+                        <button className="back-button">←</button>
                     </Link>
-                    <h1>Nuestras Marcas</h1>
+                    <Image
+                        src="/logo-megalabs-green.png"
+                        alt="Logo"
+                        width={180}
+                        height={38}
+                        priority
+                    />
                     <div></div> {/* Elemento vacío para mantener la alineación */}
                 </header>
 
