@@ -3,6 +3,7 @@ import Head from 'next/head';
 import Link from 'next/link';
 import useProducts from '../hooks/useProducts';
 import BrandButton from '../components/BrandButton';
+import styles from './productsBrands.module.css'
 
 const ProductsBrands = () => {
     const { getBrands, loading, error } = useProducts([]);
@@ -51,7 +52,7 @@ const ProductsBrands = () => {
                     <div></div> {/* Elemento vacío para mantener la alineación */}
                 </header>
 
-                <main className="brands-container">
+                <main className={styles.brandsContainer}>
                     {brands.length > 0 ? (
                         brands.map((brand, index) => (
                             <BrandButton key={index} brand={brand} />

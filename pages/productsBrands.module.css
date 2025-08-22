@@ -1,0 +1,13 @@
+/* Estilos para la página de productos */
+.brandsContainer {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+  padding: 2rem;
+}
+
+@media (max-width: 768px) {
+  .brandsContainer {
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  }
+}
