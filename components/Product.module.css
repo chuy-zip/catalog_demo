@@ -1,0 +1,110 @@
+.productCard {
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+  max-width: 500px;
+  width: 100%;
+}
+
+/* Estilos para el error de producto */
+.productError {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 300px;
+  background: #f8f9fa;
+  border-radius: 8px;
+}
+
+.productError p {
+  color: #6c757d;
+  font-size: 1.2rem;
+}
+
+/* Estilos para el componente Product */
+
+.productImage {
+  width: 100%;
+  height: 300px;
+  position: relative;
+}
+
+.productImg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.productInfo {
+  padding: 1.5rem;
+}
+
+.productName {
+  margin: 0 0 1rem 0;
+  color: #333;
+  font-size: 1.5rem;
+}
+
+.productDescription {
+  color: #666;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* Estilos para miniaturas de productos */
+.productThumbnails {
+  background: white;
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.productThumbnails h3 {
+  margin: 0 0 1rem 0;
+  color: #333;
+}
+
+.thumbnailGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+  gap: 1rem;
+}
+
+.thumbnailItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+  transition: transform 0.3s;
+  border: 2px solid transparent;
+  border-radius: 8px;
+  padding: 0.5rem;
+}
+
+.thumbnailItem:hover {
+  transform: translateY(-4px);
+}
+
+.thumbnailItemActive {
+  border-color: #0070f3;
+  background: #f0f7ff;
+}
+
+.thumbnailImage {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 6px;
+}
+
+.thumbnailName {
+  margin-top: 0.5rem;
+  font-size: 0.8rem;
+  text-align: center;
+  color: #495057;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  width: 100%;
+}

@@ -1,12 +1,13 @@
 import Image from 'next/image';
+import styles from './Product.module.css';
 
 const Product = ({ product }) => {
+    console.log(product);
 
-    console.log(product)
     if (!product) {
         return (
-            <div className="product-card">
-                <div className="product-error">
+            <div className={styles.productCard}>
+                <div className={styles.productError}>
                     <p>Producto no disponible</p>
                 </div>
             </div>
@@ -14,8 +15,8 @@ const Product = ({ product }) => {
     }
 
     return (
-        <div className="product-card">
-            <div className="product-image">
+        <div className={styles.productCard}>
+            <div className={styles.productImage}>
                 <Image
                     key={product.id}
                     priority={true}
@@ -23,12 +24,12 @@ const Product = ({ product }) => {
                     alt={product.name}
                     width={400}
                     height={400}
-                    className="product-img"
+                    className={styles.productImg}
                 />
             </div>
-            <div className="product-info">
-                <h2 className="product-name">{product.name}</h2>
-                <p className="product-description">{product.description}</p>
+            <div className={styles.productInfo}>
+                <h2 className={styles.productName}>{product.name}</h2>
+                <p className={styles.productDescription}>{product.description}</p>
             </div>
         </div>
     );

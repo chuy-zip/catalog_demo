@@ -1,0 +1,96 @@
+/* Estilos para la vista de productos */
+.productViewContainer {
+  padding: 2rem;
+}
+
+/* Estilos para la vista de productos */
+.productViewContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.productDisplay {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.productCounter {
+  background: #f8f9fa;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  font-weight: bold;
+  color: #495057;
+}
+
+/* Estilos para miniaturas de productos */
+.productThumbnails {
+  background: white;
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.productThumbnails h3 {
+  margin: 0 0 1rem 0;
+  color: #333;
+}
+
+.thumbnailGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+  gap: 1rem;
+}
+
+.thumbnailItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+  transition: transform 0.3s;
+  border: 2px solid transparent;
+  border-radius: 8px;
+  padding: 0.5rem;
+}
+
+.thumbnailItem:hover {
+  transform: translateY(-4px);
+}
+
+.thumbnailItemActive {
+  border-color: #0070f3;
+  background: #f0f7ff;
+}
+
+.thumbnailImage {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 6px;
+}
+
+.thumbnailName {
+  margin-top: 0.5rem;
+  font-size: 0.8rem;
+  text-align: center;
+  color: #495057;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  width: 100%;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .thumbnailGrid {
+    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+  }
+}
+
+/* Mejoras para accesibilidad */
+.thumbnailItem:focus {
+  outline: 2px solid #0070f3;
+  outline-offset: 2px;
+}

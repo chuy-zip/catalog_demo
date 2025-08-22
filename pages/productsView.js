@@ -4,6 +4,7 @@ import Head from 'next/head';
 import Link from 'next/link';
 import useProducts from '../hooks/useProducts';
 import Product from '../components/Product';
+import styles from './productsView.module.css';
 
 const ProductsView = () => {
   const router = useRouter();
@@ -61,23 +62,23 @@ const ProductsView = () => {
             <button className="back-button">← Volver a marcas</button>
           </Link>
           <h1>Productos de {brand}</h1>
-          <div className="product-counter">
+          <div className={styles.productCounter}>
             {currentProductIndex + 1} / {brandProducts.length}
           </div>
         </header>
 
-        <main className="product-view-container">
-          <div className="product-display">
+        <main className={styles.productViewContainer}>
+          <div className={styles.productDisplay}>
             {currentProduct && <Product product={currentProduct} />}
           </div>
 
-          <div className="product-thumbnails">
+          <div className={styles.productThumbnails}>
             <h3>Todos los productos de {brand}</h3>
-            <div className="thumbnail-grid">
+            <div className={styles.thumbnailGrid}>
               {brandProducts.map((product, index) => (
                 <button
                   key={product.id}
-                  className={`thumbnail-item ${index === currentProductIndex ? 'active' : ''}`}
+                  className={`${styles.thumbnailItem} ${index === currentProductIndex ? styles.thumbnailItemActive : ''}`}
                   onClick={() => setCurrentProductIndex(index)}
                   aria-label={`Ver ${product.name}`}
                   aria-current={index === currentProductIndex}
@@ -85,9 +86,9 @@ const ProductsView = () => {
                   <img
                     src={product.image}
                     alt={product.name}
-                    className="thumbnail-image"
+                    className={styles.thumbnailImage}
                   />
-                  <span className="thumbnail-name">{product.name}</span>
+                  <span className={styles.thumbnailName}>{product.name}</span>
                 </button>
               ))}
             </div>
