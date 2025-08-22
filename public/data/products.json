@@ -3,21 +3,21 @@
     "id": 1,
     "name": "Producto Ejemplo 1",
     "description": "Descripción detallada del producto ejemplo 1",
-    "image": "/images/producto1.jpg",
+    "image": "/images/producto1.png",
     "brand": "Marca A"
   },
   {
     "id": 2,
     "name": "Producto Ejemplo 2",
     "description": "Descripción detallada del producto ejemplo 2",
-    "image": "/images/producto2.jpg",
+    "image": "/images/producto2.png",
     "brand": "Marca A"
   },
   {
     "id": 3,
     "name": "Producto Ejemplo 3",
     "description": "Descripción detallada del producto ejemplo 3",
-    "image": "/images/producto3.jpg",
+    "image": "/images/producto3.png",
     "brand": "Marca B"
   }
 ]

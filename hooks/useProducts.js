@@ -1,7 +1,7 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 
 const useProducts = () => {
-  const [products, setProducts] = useState([]);
+  const [productsData, setProductsData] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
@@ -13,7 +13,7 @@ const useProducts = () => {
           throw new Error('Error al cargar los productos');
         }
         const data = await response.json();
-        setProducts(data);
+        setProductsData(data);
       } catch (err) {
         setError(err.message);
       } finally {
@@ -24,18 +24,27 @@ const useProducts = () => {
     fetchProducts();
   }, []);
 
-  // Función para obtener productos por marca
-  const getProductsByBrand = (brand) => {
-    return products.filter(product => product.brand === brand);
-  };
+  // Función memoizada para obtener productos por marca
+  const getProductsByBrand = useCallback((brand) => {
+    return productsData.filter(product => 
+      product.brand && brand && 
+      product.brand.toLowerCase() === brand.toLowerCase()
+    );
+  }, [productsData]);
 
-  // Función para obtener todas las marcas únicas
-  const getBrands = () => {
-    const brands = [...new Set(products.map(product => product.brand))];
+  // Función memoizada para obtener todas las marcas únicas
+  const getBrands = useCallback(() => {
+    const brands = [...new Set(productsData.map(product => product.brand))];
     return brands.sort();
-  };
+  }, [productsData]);
 
-  return { products, loading, error, getProductsByBrand, getBrands };
+  return { 
+    products: productsData, 
+    loading, 
+    error, 
+    getProductsByBrand, 
+    getBrands 
+  };
 };
 
 export default useProducts;

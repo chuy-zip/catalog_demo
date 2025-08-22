@@ -21,7 +21,7 @@ export default function Home() {
           />
           <h1>Bienvenido al Catálogo</h1>
           <p>Descubre nuestros productos por marcas</p>
-          <Link href="/products" passHref>
+          <Link href="/productsBrands" passHref>
             <button className="cta-button">Comenzar</button>
           </Link>
         </div>
